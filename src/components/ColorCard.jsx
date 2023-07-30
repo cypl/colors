@@ -1,7 +1,15 @@
 import { styled } from "styled-components"
+import { useState, useEffect } from "react"
 import PropTypes from 'prop-types'
+import { colorsUI } from "../utils/colorsUI"
+import { fromHexToRgb } from "../utils/hexToRgb"
 
 function ColorCard({name, color, luminance, hue, saturation, lightness}){
+    const[colorRGB, setColorRGB] = useState(fromHexToRgb(color))
+
+    useEffect(() => {
+      setColorRGB(fromHexToRgb(color))
+    }, [color])
 
     return(
         <ColorText>
@@ -16,9 +24,8 @@ function ColorCard({name, color, luminance, hue, saturation, lightness}){
             </LuminanceFlag>
           </ColorName>
           <Translations>
-            <p>RGB:</p>
+            <p>RGB: <span className="colored-value">rgb({colorRGB[0]}, {colorRGB[1]}, {colorRGB[2]})</span></p>
             <p>HSL: <span className="colored-value">hsl({hue}°, {saturation}%, {lightness}%)</span></p>
-            <p>CMYK:</p>
           </Translations>
         </ColorText>
     )
@@ -37,10 +44,10 @@ ColorCard.propTypes = {
   
 
 const ColorText = styled.div`
-  border:1px solid rgba(120,120,120,0.2);
-  background-color:rgba(120,120,120,0.1);
+  border:1px solid ${colorsUI.darkless};
+  background-color:${colorsUI.darkest};
   padding:12px 15px 12px 155px;
-  border-radius:4px;
+  border-radius:5px;
   margin:30px 0;
   position:relative;
   overflow:hidden;
@@ -52,7 +59,7 @@ const ColorText = styled.div`
     left:0;
   }
   & .colored-value{
-    color:#e2bd7d;
+    color:${colorsUI.darkColoredValue};
   }
   `
 const ColorName = styled.div`
@@ -68,7 +75,7 @@ const LuminanceFlag = styled.span`
   font-size:11px;
   line-height:1;
   padding:5px 10px;
-  background-color:rgba(0,0,0,0.15);
+  background-color:${colorsUI.dark};
   border-radius:12px;
   & .icon-luminance{
     height:10px;
@@ -80,10 +87,10 @@ const LuminanceFlag = styled.span`
 `
 const Translations = styled.div`
   margin-top:12px;
-  background-color:rgba(0,0,0,0.15);
+  background-color:${colorsUI.dark};
   padding:10px 10px 10px 15px;
-  border-radius:0px 4px 4px 0px;
-  border-left:1px solid rgba(120,120,120,0.2);
+  border-radius:4px;
+  //border-left:1px solid rgba(120,120,120,0.2);
   & p{
     font-size:13px;
   }
