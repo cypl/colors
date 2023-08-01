@@ -30,8 +30,8 @@ const Branding = styled.h1`
     color:${colorsUI.darkText};
     & svg{
         height:19px;
-        vertical-align:-4px;
-        margin-left:6px;
+        vertical-align:-3px;
+        margin-right:5px;
     }
 `
 const ColorThemeSwitch = styled.div`
@@ -50,15 +50,28 @@ const ColorTheme = styled.div`
     cursor:pointer;
     background-color:transparent;
     transition:0.1s background-color ease-in-out;
+    background-color:${colorsUI.darkest};
     & svg{
         height:11px;
+        color:rgba(255,255,255,0.5);
+        transition:0.05s color ease-in-out;
     }
     &:hover{
-        background-color:${colorsUI.darkest};
+        background-color:transparent;
         transition:0.1s background-color ease-in-out;
+        & svg{
+            opacity:1;
+            color:${colorsUI.darkColoredValue};
+            transition:0.05s color ease-in-out;
+        }
     }
     &.active{
-        background-color:${colorsUI.darkest};
+        background-color:transparent;
+        & svg{
+            opacity:1;
+            color:${colorsUI.darkColoredValue};
+            transition:0.05s color ease-in-out;
+        }
     }
 `
 
@@ -67,9 +80,6 @@ function Header(){
     const dispatch = useDispatch()
 
     const colorTheme = useSelector(state => state.colorTheme)
-
-    const colorPrimary1 = useSelector((state) => state.primary1.colorPrimary1)
-    const colorSecondary1 = useSelector((state) => state.secondary1.colorSecondary1)
 
     const setDayTheme = () => {
         dispatch(setTheme("Day"))
@@ -83,10 +93,10 @@ function Header(){
             <HeaderFixed>
                 <div className="content_large">
                     <Branding>
-                        Nanosite <span style={{color:colorSecondary1, fontWeight:400}}>ColorPickers</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
-                            <path style={{fill:colorPrimary1}} d="M3.75,5C-.11,8.58,.37,13.11,.37,13.11c0,0,5.16,.5,8.53-2.13C13.05,7.73,14.09,1.29,14.09,1.29c0,0-6.48,.13-10.34,3.71ZM.39,12.98S5.24,7.73,9.7,5.87L.39,12.98Z"/>
+                            <path style={{fill:colorsUI.darkColoredValue}} d="M3.75,5C-.11,8.58,.37,13.11,.37,13.11c0,0,5.16,.5,8.53-2.13C13.05,7.73,14.09,1.29,14.09,1.29c0,0-6.48,.13-10.34,3.71ZM.39,12.98S5.24,7.73,9.7,5.87L.39,12.98Z"/>
                         </svg>
+                        Nanosite ColorPickers
                     </Branding>
                     <ColorThemeSwitch>
                         <ColorTheme onClick={setDayTheme} className={colorTheme === "Day" && "active"}>
