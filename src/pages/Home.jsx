@@ -61,6 +61,8 @@ function Home() {
 
   const dispatch = useDispatch()
 
+  const colorTheme = useSelector(state => state.colorTheme)
+
   // Starter
   const [colorStarter, setColorStarter] = useState("#517060")
   const [starterLuminance, setStarterLuminance] = useState(fromHexToLuminanceRatio(colorStarter))
@@ -175,9 +177,9 @@ function Home() {
     <>
       <Header/>
 
-      <StyleSelector>
+      <StyleSelector $colorTheme={colorTheme}>
         <SelectorWrapper className="content_large">
-          <Selector>
+          <Selector $colorTheme={colorTheme}>
             <span className={style === "corporate" ? "active" : undefined} onClick={() => setStyle("corporate")}>Corporate</span>
             <span className={style === "spicy" ? "active" : undefined} onClick={() => setStyle("spicy")}>Spicy</span>
             <span className={style === "old-fashioned" ? "active" : undefined} onClick={() => setStyle("old-fashioned")}>Old fashioned</span>
@@ -186,7 +188,7 @@ function Home() {
       </StyleSelector>
 
       {colorPrimary1 && colorPrimary && colorPrimary2 && colorSecondary1 && colorSecondary && colorSecondary2 && colorLight && colorLight2 &&
-        <Panorama>
+        <Panorama $colorTheme={colorTheme}>
             <div className="content_large">
               <PanoramaWrapper>
                 <div className="third" style={{ backgroundColor: colorPrimary1 }}></div>
@@ -246,7 +248,7 @@ function Home() {
 export default Home
 
 const Panorama = styled.div`
-  background-color:${colorsUI.darkest};
+  background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
   padding:15px 0px 30px 0px;
 `
 const PanoramaWrapper = styled.div`
@@ -274,7 +276,7 @@ const StyleSelector = styled.div`
   line-height:1;
   color:#fff;
   padding:15px 0px 0px 0px;
-  background-color:${colorsUI.darkest};
+  background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
 `
 const SelectorWrapper = styled.div`
   display:flex;
@@ -284,21 +286,22 @@ const Selector = styled.span`
   display: inline-block;
   border-radius:4px;
   overflow:hidden;
-  border:1px solid ${colorsUI.darkless};
+  border:1px solid ${props => props.$colorTheme === "Night" ? `${colorsUI.darkless}` : `${colorsUI.lightless}`};
   & span{
     display:inline-block;
     padding:10px 12px;
     cursor:pointer;
-    color:rgba(255,255,255,0.5);
+    background-color:transparent;
+    color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkTextBtn}` : `${colorsUI.lightTextBtn}`};
     transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
     &:hover{
-      background-color: ${colorsUI.dark};
-      color:${colorsUI.darkColoredValue};
+      background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
+      color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
       transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
     }
     &.active{
-      background-color: ${colorsUI.dark};
-      color:${colorsUI.darkColoredValue};
+      background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
+      color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
       transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
     }
   }
