@@ -1,6 +1,11 @@
+import Header from "../components/Header"
+
 function Error(){
     return(
-        <p>Error</p>
+        <>
+            <Header/>
+            <p>Error</p>
+        </>
     )
 }
 
