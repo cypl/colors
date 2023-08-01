@@ -132,7 +132,6 @@ function Home() {
   const light2Saturation = useSelector((state) => state.light2.light2Saturation)
   const light2Lightness = useSelector((state) => state.light2.light2Lightness)
 
-
   // by default, style is "corporate"
   const [style, setStyle] = useState("corporate")
 
@@ -172,25 +171,10 @@ function Home() {
       handleClickStyle(style)
   }, [style])
 
-
-  // const [colorClairName, setColorClairName] = useState("clair")
-  // const [colorClair, setColorClair] = useState("")
-  // const [clairLuminance, setClairLuminance] = useState()
-  // const [clairHue, setClairHue] = useState()
-  // const [clairSaturation, setClairSaturation] = useState()
-  // const [clairLightness, setClairLightness] = useState()
-
-  // const [colorClair2Name, setColorClair2Name] = useState("clair2")
-  // const [colorClair2, setColorClair2] = useState("")
-  // const [clair2Luminance, setClair2Luminance] = useState()
-  // const [clair2Hue, setClair2Hue] = useState()
-  // const [clair2Saturation, setClair2Saturation] = useState()
-  // const [clair2Lightness, setClair2Lightness] = useState()
-
-
   return (
     <>
       <Header/>
+
       <StyleSelector>
         <SelectorWrapper className="content_large">
           <Selector>
@@ -305,13 +289,17 @@ const Selector = styled.span`
     display:inline-block;
     padding:10px 12px;
     cursor:pointer;
+    color:rgba(255,255,255,0.5);
+    transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
     &:hover{
       background-color: ${colorsUI.dark};
-      transition:0.1s background-color ease-in-out;
+      color:${colorsUI.darkColoredValue};
+      transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
     }
     &.active{
       background-color: ${colorsUI.dark};
-      transition:0.1s background-color ease-in-out;
+      color:${colorsUI.darkColoredValue};
+      transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
     }
   }
 `
