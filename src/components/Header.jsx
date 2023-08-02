@@ -14,6 +14,7 @@ const HeaderFixed = styled.div`
     width:100%;
     display:flex;
     align-items:center;
+    z-index:1;
     background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
     & .content_large{
         display:flex;
