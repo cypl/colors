@@ -108,6 +108,7 @@ function Home() {
         }
       }
       handleClickStyle(style)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [style])
 
   return (
@@ -115,6 +116,11 @@ function Home() {
       <Header/>
       <StyleSelector $colorTheme={colorTheme}>
         <SelectorWrapper className="content_large">
+          <StartHere $colorTheme={colorTheme}>
+            <span className="color_starter_btn">
+              <span className="color_starter" style={{backgroundColor:colorStarter}}></span>Color starter
+            </span>
+          </StartHere>
           <Selector $colorTheme={colorTheme}>
             <span className={style === "corporate" ? "active" : undefined} onClick={() => setStyle("corporate")}>Corporate</span>
             <span className={style === "spicy" ? "active" : undefined} onClick={() => setStyle("spicy")}>Spicy</span>
@@ -139,7 +145,36 @@ const StyleSelector = styled.div`
 `
 const SelectorWrapper = styled.div`
   display:flex;
-  justify-content:flex-end;
+  justify-content:space-between;
+`
+const StartHere = styled.div`
+  display: inline-block;
+  border-radius:4px;
+  overflow:hidden;
+  border:1px solid ${props => props.$colorTheme === "Night" ? `${colorsUI.darkless}` : `${colorsUI.lightless}`};
+  & .color_starter_btn{
+    position:relative;
+    display:inline-block;
+    padding:10px 12px 10px 62px;
+    cursor:pointer;
+    background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
+    color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
+    transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
+    &:hover{
+      background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
+      color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
+      transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
+    }
+    & .color_starter{
+      position:absolute;
+      left:0;
+      top:0;
+      width:50px;
+      height:100%;
+      background-color:red;
+    }
+  }
+  
 `
 const Selector = styled.span`
   display: inline-block;
