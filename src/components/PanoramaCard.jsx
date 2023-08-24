@@ -40,7 +40,7 @@ const ColorLuminance = styled.p`
     transition:0.1s opacity ease-in-out, 0.1s transform ease-in-out;
     & svg{
         display:inline-block;
-        margin-right:5px;
+        margin-right:3px;
         height:10px;
         vertical-align:-1px;
         & path{
