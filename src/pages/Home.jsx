@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { styled } from "styled-components"
-import { fromHexToLuminanceRatio } from "../utils/luminanceRatio"
-import { fromHexToHsl } from "../utils/hexToHsl"
 import { DefineColor } from "../utils/defineColor"
 import { colorsUI } from "../utils/colorsUI"
 import Header from "../components/Header"
 import Panorama from "../components/Panorama"
 import ColorCards from "../components/ColorCards"
+import ModalColorStarter from "../layouts/ModalColorStarter"
+import { ModalContext } from "react-modal-classic"
+import { modalThemeColorPicker } from "../utils/modalThemes"
 import { useDispatch, useSelector } from 'react-redux'
 import { 
   setColorPrimary1,
@@ -61,15 +62,27 @@ import {
 function Home() {
 
   const dispatch = useDispatch()
-
   const colorTheme = useSelector(state => state.colorTheme)
 
+  const { openModal } = useContext(ModalContext)
+
   // Starter
-  const [colorStarter, setColorStarter] = useState("#517060")
-  const [starterLuminance, setStarterLuminance] = useState(fromHexToLuminanceRatio(colorStarter))
-  const [starterHue, setStarterHue] = useState(fromHexToHsl(colorStarter)[0])
-  const [starterSaturation, setStarterSaturation] = useState(fromHexToHsl(colorStarter)[1])
-  const [starterLightness, setStarterLightness] = useState(fromHexToHsl(colorStarter)[2])
+  const colorStarter = useSelector(state => state.colorStarter.color)
+  const starterLuminance = useSelector(state => state.colorStarter.luminance)
+  const starterHue = useSelector(state => state.colorStarter.hue)
+  const starterSaturation = useSelector(state => state.colorStarter.saturation)
+  const starterLightness = useSelector(state => state.colorStarter.lightness)
+
+  console.log(
+    {
+      color:colorStarter,
+      luminance:starterLuminance,
+      hue:starterHue,
+      saturation:starterSaturation,
+      lightness:starterLightness,
+    }
+  )
+  
 
   // by default, style is "corporate"
   const [style, setStyle] = useState("corporate")
@@ -109,16 +122,16 @@ function Home() {
       }
       handleClickStyle(style)
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [style])
+  }, [style, colorStarter])
 
   return (
     <>
       <Header/>
       <StyleSelector $colorTheme={colorTheme}>
         <SelectorWrapper className="content_large">
-          <StartHere $colorTheme={colorTheme}>
+          <StartHere $colorTheme={colorTheme} onClick={() => openModal(<ModalColorStarter/>, modalThemeColorPicker)}>
             <span className="color_starter_btn">
-              <span className="color_starter" style={{backgroundColor:colorStarter}}></span>Color starter
+              <span className="color_starter" style={{backgroundColor:colorStarter}}></span>Couleur de départ
             </span>
           </StartHere>
           <Selector $colorTheme={colorTheme}>
