@@ -8,6 +8,7 @@ import secondarySlice from "./secondarySlice"
 import secondary2Slice from "./secondary2Slice"
 import lightSlice from "./lightSlice"
 import light2Slice from "./light2Slice"
+import colorStarterSlice from "./colorStarterSlice"
 
 export const store = configureStore({
   reducer: {
@@ -20,5 +21,6 @@ export const store = configureStore({
     secondary2: secondary2Slice,
     light: lightSlice,
     light2: light2Slice,
+    colorStarter: colorStarterSlice,
   },
 })
