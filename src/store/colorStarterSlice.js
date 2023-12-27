@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { fromHexToLuminanceRatio } from "../utils/luminanceRatio"
 import { fromHexToHsl } from "../utils/hexToHsl"
 
-const start = "#517060"
+const start = "#b74320"
 
 const initialState = {
     color: start,
