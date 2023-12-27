@@ -18,7 +18,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-modal-classic": "^0.0.41",
+    "react-modal-classic": "^0.0.45",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.14.1",
     "simple-color-converter": "^2.1.13",
