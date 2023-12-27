@@ -25,6 +25,9 @@ function ModalColorStarter(){
     const dispatch = useDispatch()
     
     const [value, setValue] = useState(colorStarter)
+    
+    // console.log(value)
+    // console.log(fromHexToHsl(value))
 
     useEffect(() => {
         dispatch(setColorStarter(value))
