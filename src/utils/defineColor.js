@@ -30,7 +30,7 @@ export function DefineColor(
     let newLightness = Math.min(baseLightness + lightnessVariation, 100)
     let newColorLuminance = 0
 
-    while (Math.abs(newColorLuminance - expectedLuminance) > 2) { // 2 is the acceptable difference between real luminance and expected luminance 
+    while (Math.abs(newColorLuminance - expectedLuminance) > 5) { // 5 is the acceptable difference between real luminance and expected luminance 
       if (newColorLuminance > expectedLuminance) {
         newLightness -= 0.01
       } else {
