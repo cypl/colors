@@ -159,7 +159,7 @@ const StartHere = styled.div`
     cursor:pointer;
     background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
     color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
-    transition:0.15s background-color ease-in-out, 0.0.5s color ease-in-out;
+    transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
     & .color_starter{
       position:absolute;
       left: 0.25rem;
@@ -167,19 +167,19 @@ const StartHere = styled.div`
       width: 3rem;
       height: calc(100% - 0.5rem);
       border-radius: 0.2rem;
-      transition:0.4s border-radius ease-in-out, transition:0.4s height ease-in-out, transition:0.4s left ease-in-out, transition:0.4s width ease-in-out;
+      transition:0.1s border-radius ease-in-out, 0.1s height ease-in-out, 0.1s left ease-in-out, 0.1s top ease-in-out, 0.1s width ease-in-out;
     }
     &:hover{
       background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
       color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
-      transition:0.15s background-color ease-in-out, 0.0.5s color ease-in-out;
+      transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
       & .color_starter{
         left: 0rem;
         top: 0rem;
         width: 3.25rem;
         height: 100%;
         border-radius: 0;
-        transition:0.4s border-radius ease-in-out, transition:0.4s height ease-in-out, transition:0.4s left ease-in-out, transition:0.4s width ease-in-out;
+        transition:0.1s border-radius ease-in-out, 0.1s height ease-in-out, 0.1s left ease-in-out, 0.1s top ease-in-out, 0.1s width ease-in-out;
       }
     }
   }
@@ -196,11 +196,11 @@ const Selector = styled.span`
     cursor:pointer;
     background-color:transparent;
     color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkTextBtn}` : `${colorsUI.lightTextBtn}`};
-    transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
+    transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
     &:hover{
       background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
       color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
-      transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
+      transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
     }
     &.active{
       background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
