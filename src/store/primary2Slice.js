@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    colorPrimary2Name: "primary2",
+    colorPrimary2Name: "primaire2",
     colorPrimary2: "",
     primary2Luminance: 0,
     primary2Hue: 0,
