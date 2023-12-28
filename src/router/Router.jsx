@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
-//import Test from '../pages/Test'
-import TestColorPicker from '../pages/TestColorPicker'
 import Error from '../pages/Error'
 
 /**
@@ -13,7 +11,6 @@ function Router(){
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/test" element={<TestColorPicker />} />
                 <Route path="*" element={<Error />} />
             </Routes>
         </BrowserRouter>
