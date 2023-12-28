@@ -1,5 +1,5 @@
 import { styled } from "styled-components"
-import { colorsUI } from "../utils/colorsUI"
+import { colorsUI } from "../utils/UI"
 import { useSelector } from 'react-redux'
 
 const ModalContent = styled.div`
