@@ -139,7 +139,7 @@ export default Home
 const StyleSelector = styled.div`
   font-size:${sizesUI.text};
   line-height:1;
-  height:60px;
+  height:56px;
   background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
   display:flex;
 `
@@ -155,7 +155,7 @@ const StartHere = styled.div`
   & .color_starter_btn{
     position:relative;
     display:inline-block;
-    padding:10px 12px 10px 62px;
+    padding:8px 12px 8px 62px;
     cursor:pointer;
     background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
     color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
@@ -167,7 +167,7 @@ const StartHere = styled.div`
       width: 3rem;
       height: calc(100% - 0.5rem);
       border-radius: 0.2rem;
-      transition:0.15s border-radius ease-in-out, transition:0.15s height ease-in-out, , transition:0.15s left ease-in-out, transition:0.15s width ease-in-out;
+      transition:0.4s border-radius ease-in-out, transition:0.4s height ease-in-out, transition:0.4s left ease-in-out, transition:0.4s width ease-in-out;
     }
     &:hover{
       background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
@@ -179,7 +179,7 @@ const StartHere = styled.div`
         width: 3.25rem;
         height: 100%;
         border-radius: 0;
-        transition:0.15s border-radius ease-in-out, transition:0.15s height ease-in-out, , transition:0.15s left ease-in-out, transition:0.15s width ease-in-out;
+        transition:0.4s border-radius ease-in-out, transition:0.4s height ease-in-out, transition:0.4s left ease-in-out, transition:0.4s width ease-in-out;
       }
     }
   }
@@ -192,7 +192,7 @@ const Selector = styled.span`
   border:1px solid ${props => props.$colorTheme === "Night" ? `${colorsUI.darkless}` : `${colorsUI.lightless}`};
   & span{
     display:inline-block;
-    padding:10px 12px;
+    padding:8px 12px;
     cursor:pointer;
     background-color:transparent;
     color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkTextBtn}` : `${colorsUI.lightTextBtn}`};
