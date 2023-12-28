@@ -16,4 +16,5 @@ export const colorsUI = {
 
 export const sizesUI = {
     text: "0.75rem",
+    radius: "0.35rem",
 }
