@@ -4,7 +4,6 @@ import { DefineColor } from "../utils/defineColor"
 import { colorsUI, sizesUI } from "../utils/UI"
 import Header from "../components/Header"
 import Panorama from "../components/Panorama"
-import ColorCards from "../components/ColorCards"
 import ModalColorStarter from "../layouts/ModalColorStarter"
 import { ModalContext } from "react-modal-classic"
 import { modalThemeColorPicker } from "../utils/modalThemes"
@@ -131,7 +130,6 @@ function Home() {
         </SelectorWrapper>
       </StyleSelector>
       <Panorama />
-      <ColorCards/>
     </>
   )
 }
@@ -141,9 +139,9 @@ export default Home
 const StyleSelector = styled.div`
   font-size:${sizesUI.text};
   line-height:1;
-  color:#fff;
-  padding:15px 0px 0px 0px;
+  height:60px;
   background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
+  display:flex;
 `
 const SelectorWrapper = styled.div`
   display:flex;
@@ -151,7 +149,7 @@ const SelectorWrapper = styled.div`
 `
 const StartHere = styled.div`
   display: inline-block;
-  border-radius:4px;
+  border-radius:${sizesUI.radius};
   overflow:hidden;
   border:1px solid ${props => props.$colorTheme === "Night" ? `${colorsUI.darkless}` : `${colorsUI.lightless}`};
   & .color_starter_btn{
@@ -162,24 +160,34 @@ const StartHere = styled.div`
     background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
     color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
     transition:0.15s background-color ease-in-out, 0.0.5s color ease-in-out;
+    & .color_starter{
+      position:absolute;
+      left: 0.25rem;
+      top: 0.25rem;
+      width: 3rem;
+      height: calc(100% - 0.5rem);
+      border-radius: 0.2rem;
+      transition:0.15s border-radius ease-in-out, transition:0.15s height ease-in-out, , transition:0.15s left ease-in-out, transition:0.15s width ease-in-out;
+    }
     &:hover{
       background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
       color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
       transition:0.15s background-color ease-in-out, 0.0.5s color ease-in-out;
-    }
-    & .color_starter{
-      position:absolute;
-      left:0;
-      top:0;
-      width:50px;
-      height:100%;
+      & .color_starter{
+        left: 0rem;
+        top: 0rem;
+        width: 3.25rem;
+        height: 100%;
+        border-radius: 0;
+        transition:0.15s border-radius ease-in-out, transition:0.15s height ease-in-out, , transition:0.15s left ease-in-out, transition:0.15s width ease-in-out;
+      }
     }
   }
   
 `
 const Selector = styled.span`
   display: inline-block;
-  border-radius:4px;
+  border-radius:${sizesUI.radius};
   overflow:hidden;
   border:1px solid ${props => props.$colorTheme === "Night" ? `${colorsUI.darkless}` : `${colorsUI.lightless}`};
   & span{
