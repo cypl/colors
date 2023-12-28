@@ -1,6 +1,6 @@
 import { styled } from "styled-components"
 import { useSelector } from 'react-redux'
-import { colorsUI } from "../utils/colorsUI"
+import { colorsUI } from "../utils/UI"
 import PanoramaCard from "./PanoramaCard"
 
 const PanoramaContainer = styled.div`
