@@ -9,12 +9,12 @@ import { modalThemeAbout } from "../utils/modalThemes"
 
 const HeaderWrapper = styled.header`
     position:relative;
-    height:70px;
+    height:58px;
     background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
 `
 const HeaderFixed = styled.div`
     position:fixed;
-    height:70px;
+    height:58px;
     width:100%;
     display:flex;
     align-items:center;
@@ -27,13 +27,13 @@ const HeaderFixed = styled.div`
     }
 `
 const Branding = styled.h1`
-    font-size:19px;
+    font-size:18px;
     line-height:1;
     font-weight:900;
-    letter-spacing:-1px;
+    letter-spacing:-0.5px;
     color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkText}` : `${colorsUI.lightText}`};
     & svg{
-        height:19px;
+        height:18px;
         vertical-align:-3px;
         margin-right:5px;
         & path{
@@ -47,7 +47,6 @@ const Menu = styled.div`
 `
 const Navigation = styled.ul`
     padding-right:30px;
-    font-size:12px;
     font-size:${sizesUI.text};
     & li{
         display:inline-block;
@@ -62,10 +61,10 @@ const Navigation = styled.ul`
     }
 `
 const ColorThemeSwitch = styled.div`
-    height:32px;
-    width:74px;
+    height:28px;
+    width:70px;
     display:flex;
-    border-radius:4px;
+    border-radius:${sizesUI.radius};
     border:1px solid ${props => props.$colorTheme === "Night" ? `${colorsUI.darkless}` : `${colorsUI.lightless}`};
     overflow:hidden;
 `
