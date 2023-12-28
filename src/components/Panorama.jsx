@@ -1,25 +1,31 @@
 import { styled } from "styled-components"
 import { useSelector } from 'react-redux'
-import { colorsUI } from "../utils/UI"
+import { colorsUI, sizesUI } from "../utils/UI"
 import PanoramaCard from "./PanoramaCard"
 
 const PanoramaContainer = styled.div`
   background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
-  padding:15px 0px 30px 0px;
+  padding:0px 0px 25px 0px;
+  height:calc(100vh - 116px);
+  & .content_large{
+    height:100%;
+    overflow: hidden;
+    display:grid;
+    grid-template-columns: calc(37% - (16px / 3)) calc(37% - (16px / 3)) calc(26% - (16px / 3));
+    gap:8px;
+  }
 `
 const PanoramaWrapper = styled.div`
-  height:200px;
-  width:100%;
-  display:flex;
-  flex-wrap:wrap;
-  & .third{
+    height:100%;
     position:relative;
-    width:33.33%;
-  }
-  & .half{
-    position:relative;
-    width:50%;
-  }
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:8px;
+    & .card{
+        position:relative;
+        width:100%;
+        border-radius: ${sizesUI.radius};
+    }
 `
 
 function Panorama(){
@@ -72,18 +78,18 @@ function Panorama(){
                 <PanoramaContainer $colorTheme={colorTheme}>
                     <div className="content_large">
                         <PanoramaWrapper>
-                            <PanoramaCard color={colorPrimary1} name={colorPrimary1Name} luminance={primary1Luminance} classname={"third"}/>
-                            <PanoramaCard color={colorPrimary} name={colorPrimaryName} luminance={primaryLuminance} classname={"third"}/>
-                            <PanoramaCard color={colorPrimary2} name={colorPrimary2Name} luminance={primary2Luminance} classname={"third"}/>
+                            <PanoramaCard color={colorPrimary1} name={colorPrimary1Name} luminance={primary1Luminance} classname={"card"}/>
+                            <PanoramaCard color={colorPrimary} name={colorPrimaryName} luminance={primaryLuminance} classname={"card"}/>
+                            <PanoramaCard color={colorPrimary2} name={colorPrimary2Name} luminance={primary2Luminance} classname={"card"}/>
                         </PanoramaWrapper>
                         <PanoramaWrapper>
-                            <PanoramaCard color={colorSecondary1} name={colorSecondary1Name} luminance={secondary1Luminance} classname={"third"}/>
-                            <PanoramaCard color={colorSecondary} name={colorSecondaryName} luminance={secondaryLuminance} classname={"third"}/>
-                            <PanoramaCard color={colorSecondary2} name={colorSecondary2Name} luminance={secondary2Luminance} classname={"third"}/>
+                            <PanoramaCard color={colorSecondary1} name={colorSecondary1Name} luminance={secondary1Luminance} classname={"card"}/>
+                            <PanoramaCard color={colorSecondary} name={colorSecondaryName} luminance={secondaryLuminance} classname={"card"}/>
+                            <PanoramaCard color={colorSecondary2} name={colorSecondary2Name} luminance={secondary2Luminance} classname={"card"}/>
                         </PanoramaWrapper>
                         <PanoramaWrapper>
-                            <PanoramaCard color={colorLight} name={colorLightName} luminance={lightLuminance} classname={"half"}/>
-                            <PanoramaCard color={colorLight2} name={colorLight2Name} luminance={light2Luminance} classname={"half"}/>
+                            <PanoramaCard color={colorLight} name={colorLightName} luminance={lightLuminance} classname={"card"}/>
+                            <PanoramaCard color={colorLight2} name={colorLight2Name} luminance={light2Luminance} classname={"card"}/>
                         </PanoramaWrapper>
                     </div>
                 </PanoramaContainer>
