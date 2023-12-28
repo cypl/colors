@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react"
 import { styled } from "styled-components"
 import { DefineColor } from "../utils/defineColor"
-import { colorsUI } from "../utils/colorsUI"
+import { colorsUI, sizesUI } from "../utils/UI"
 import Header from "../components/Header"
 import Panorama from "../components/Panorama"
 import ColorCards from "../components/ColorCards"
@@ -139,7 +139,7 @@ function Home() {
 export default Home
 
 const StyleSelector = styled.div`
-  font-size:12px;
+  font-size:${sizesUI.text};
   line-height:1;
   color:#fff;
   padding:15px 0px 0px 0px;
@@ -161,11 +161,11 @@ const StartHere = styled.div`
     cursor:pointer;
     background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
     color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
-    transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
+    transition:0.15s background-color ease-in-out, 0.0.5s color ease-in-out;
     &:hover{
       background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
       color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
-      transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
+      transition:0.15s background-color ease-in-out, 0.0.5s color ease-in-out;
     }
     & .color_starter{
       position:absolute;
@@ -173,7 +173,6 @@ const StartHere = styled.div`
       top:0;
       width:50px;
       height:100%;
-      background-color:red;
     }
   }
   
