@@ -1,6 +1,6 @@
 import Router from "./router/Router"
 import { createGlobalStyle } from "styled-components"
-import { colorsUI } from "./utils/colorsUI"
+import { colorsUI } from "./utils/UI"
 import { useSelector } from 'react-redux'
 
 function App() {
