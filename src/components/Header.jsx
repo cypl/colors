@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { styled } from "styled-components"
-import { colorsUI } from "../utils/colorsUI"
+import { colorsUI, sizesUI } from "../utils/UI"
 import { useDispatch, useSelector } from 'react-redux'
 import { setTheme } from "../store/colorThemeSlice"
 import { ModalContext } from "react-modal-classic"
@@ -48,6 +48,7 @@ const Menu = styled.div`
 const Navigation = styled.ul`
     padding-right:30px;
     font-size:12px;
+    font-size:${sizesUI.text};
     & li{
         display:inline-block;
         margin-left:30px;
