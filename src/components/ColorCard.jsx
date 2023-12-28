@@ -2,7 +2,7 @@ import { styled } from "styled-components"
 import { useState, useEffect } from "react"
 import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
-import { colorsUI } from "../utils/colorsUI"
+import { colorsUI } from "../utils/UI"
 import { fromHexToRgb } from "../utils/hexToRgb"
 
 function ColorCard({name, color, luminance, hue, saturation, lightness}){
