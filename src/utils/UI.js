@@ -11,7 +11,9 @@ export const colorsUI = {
     lightColoredValue: "#a0762e",
     lightText: "#333333",
     lightTextBtn: "rgba(0,0,0,0.25)",
-    alert: "#ed0c46"
+    alert: "#ed0c46",
+    valid: "#3DF5CA",
+    validAlpha: "rgba(61,245,202,0.15)",
 }
 
 export const sizesUI = {
