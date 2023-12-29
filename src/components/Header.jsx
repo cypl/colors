@@ -4,8 +4,9 @@ import { colorsUI, sizesUI } from "../utils/UI"
 import { useDispatch, useSelector } from 'react-redux'
 import { setTheme } from "../store/colorThemeSlice"
 import { ModalContext } from "react-modal-classic"
+import ModalExport from "../layouts/ModalExport"
 import ModalAbout from "../layouts/ModalAbout"
-import { modalThemeAbout } from "../utils/modalThemes"
+import { modalThemeExport, modalThemeAbout } from "../utils/modalThemes"
 
 const HeaderWrapper = styled.header`
     position:relative;
@@ -126,8 +127,8 @@ function Header(){
                     </Branding>
                     <Menu>
                         <Navigation $colorTheme={colorTheme}>
-                            {/* <li>Test RGAA</li>
-                            <li>Exporter</li> */}
+                            {/* <li>Test RGAA</li> */}
+                            <li onClick={() => openModal(<ModalExport/>, modalThemeExport)}>Exporter</li>
                             <li onClick={() => openModal(<ModalAbout/>, modalThemeAbout)}>A propos</li>
                         </Navigation>
                         <ColorThemeSwitch $colorTheme={colorTheme}>
