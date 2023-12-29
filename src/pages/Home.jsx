@@ -119,7 +119,8 @@ function Home() {
         <SelectorWrapper className="content_large">
           <StartHere $colorTheme={colorTheme} onClick={() => openModal(<ModalColorStarter/>, modalThemeColorPicker)}>
             <span className="color_starter_btn">
-              <span className="color_starter" style={{backgroundColor:colorStarter}}></span>Couleur de départ
+              <span className="color_starter" style={{backgroundColor:colorStarter}}>
+              </span>Couleur de départ
             </span>
           </StartHere>
           <Selector $colorTheme={colorTheme}>
@@ -162,6 +163,9 @@ const StartHere = styled.div`
     transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
     & .color_starter{
       position:absolute;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       left: 0.25rem;
       top: 0.25rem;
       width: 3rem;
@@ -173,14 +177,14 @@ const StartHere = styled.div`
       background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
       color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
       transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
-      & .color_starter{
-        left: 0rem;
-        top: 0rem;
-        width: 3.25rem;
-        height: 100%;
-        border-radius: 0;
-        transition:0.1s border-radius ease-in-out, 0.1s height ease-in-out, 0.1s left ease-in-out, 0.1s top ease-in-out, 0.1s width ease-in-out;
-      }
+      // & .color_starter{
+      //   left: 0rem;
+      //   top: 0rem;
+      //   width: 3.25rem;
+      //   height: 100%;
+      //   border-radius: 0;
+      //   transition:0.1s border-radius ease-in-out, 0.1s height ease-in-out, 0.1s left ease-in-out, 0.1s top ease-in-out, 0.1s width ease-in-out;
+      // }
     }
   }
   
