@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useSelector } from 'react-redux'
 import { styled } from "styled-components"
-import { colorsUI } from "../utils/UI"
+import { colorsUI, sizesUI } from "../utils/UI"
 import PropTypes from 'prop-types'
 
 const ColorFlag = styled.p`
@@ -10,10 +10,10 @@ const ColorFlag = styled.p`
     top:10px;
     background-color:${props => props.$colorTheme === "Night" ? `rgba(0,0,0,0.5)` : `rgba(255,255,255,0.85)`};
     color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkText}` : `${colorsUI.lightText}`};
-    padding:5px 10px 6px 10px;
-    font-size:10.5px;
+    padding:0.35rem 0.7rem;
+    font-size:${sizesUI.text};
     line-height:1;
-    border-radius:12px;
+    border-radius:1rem;
     opacity:0;
     transform:translateY(15px);
     transition:0.1s opacity ease-in-out, 0.1s transform ease-in-out;
@@ -31,10 +31,10 @@ const ColorLuminance = styled.p`
     right:10px;
     top:10px;
     background-color:${props => props.$colorTheme === "Night" ? `rgba(0,0,0,0.5)` : `rgba(255,255,255,0.85)`};
-    padding:5px 10px 6px 10px;
-    font-size:10.5px;
+    padding:0.35rem 0.7rem;
+    font-size:${sizesUI.text};
     line-height:1;
-    border-radius:12px;
+    border-radius:1rem;
     opacity:0;
     transform:translateY(15px);
     transition:0.1s opacity ease-in-out, 0.1s transform ease-in-out;
