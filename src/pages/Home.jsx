@@ -1,12 +1,9 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import { styled } from "styled-components"
 import { DefineColor } from "../utils/defineColor"
 import { colorsUI, sizesUI } from "../utils/UI"
 import Header from "../components/Header"
 import Panorama from "../components/Panorama"
-import ModalColorStarter from "../layouts/ModalColorStarter"
-import { ModalContext } from "react-modal-classic"
-import { modalThemeColorPicker } from "../utils/modalThemes"
 import { useDispatch, useSelector } from 'react-redux'
 import { 
   setColorPrimary1,
@@ -63,8 +60,6 @@ function Home() {
   const dispatch = useDispatch()
   const colorTheme = useSelector(state => state.colorTheme)
 
-  const { openModal } = useContext(ModalContext)
-
   // Starter
   const colorStarter = useSelector(state => state.colorStarter.color)
   const starterHue = useSelector(state => state.colorStarter.hue)
@@ -117,12 +112,6 @@ function Home() {
       <Header/>
       <StyleSelector $colorTheme={colorTheme}>
         <SelectorWrapper className="content_large">
-          <StartHere $colorTheme={colorTheme} onClick={() => openModal(<ModalColorStarter/>, modalThemeColorPicker)}>
-            <span className="color_starter_btn">
-              <span className="color_starter" style={{backgroundColor:colorStarter}}>
-              </span>Couleur de départ
-            </span>
-          </StartHere>
           <Selector $colorTheme={colorTheme}>
             <span className={style === "corporate" ? "active" : undefined} onClick={() => setStyle("corporate")}>Corporate</span>
             <span className={style === "spicy" ? "active" : undefined} onClick={() => setStyle("spicy")}>Spicy</span>
@@ -147,47 +136,6 @@ const StyleSelector = styled.div`
 const SelectorWrapper = styled.div`
   display:flex;
   justify-content:space-between;
-`
-const StartHere = styled.div`
-  display: inline-block;
-  border-radius:${sizesUI.radius};
-  overflow:hidden;
-  border:1px solid ${props => props.$colorTheme === "Night" ? `${colorsUI.darkless}` : `${colorsUI.lightless}`};
-  & .color_starter_btn{
-    position:relative;
-    display:inline-block;
-    padding:8px 12px 8px 62px;
-    cursor:pointer;
-    background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
-    color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
-    transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
-    & .color_starter{
-      position:absolute;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      left: 0.25rem;
-      top: 0.25rem;
-      width: 3rem;
-      height: calc(100% - 0.5rem);
-      border-radius: 0.2rem;
-      transition:0.1s border-radius ease-in-out, 0.1s height ease-in-out, 0.1s left ease-in-out, 0.1s top ease-in-out, 0.1s width ease-in-out;
-    }
-    &:hover{
-      background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
-      color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
-      transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
-      // & .color_starter{
-      //   left: 0rem;
-      //   top: 0rem;
-      //   width: 3.25rem;
-      //   height: 100%;
-      //   border-radius: 0;
-      //   transition:0.1s border-radius ease-in-out, 0.1s height ease-in-out, 0.1s left ease-in-out, 0.1s top ease-in-out, 0.1s width ease-in-out;
-      // }
-    }
-  }
-  
 `
 const Selector = styled.span`
   display: inline-block;
