@@ -12,8 +12,8 @@ const PanoramaContainer = styled.div`
     height:100%;
     overflow: hidden;
     display:grid;
-    grid-template-columns: calc(37% - (16px / 3)) calc(37% - (16px / 3)) calc(26% - (16px / 3));
-    gap:8px;
+    grid-template-columns: calc(37% - (${sizesUI.gapGrid} * 2 / 3)) calc(37% - (${sizesUI.gapGrid} * 2 / 3)) calc(26% - (${sizesUI.gapGrid} * 2 / 3));
+    gap:${sizesUI.gapGrid};
   }
 `
 const PanoramaWrapper = styled.div`
@@ -21,17 +21,17 @@ const PanoramaWrapper = styled.div`
     position:relative;
     display:grid;
     grid-template-columns: 1fr;
-    gap:8px;
+    gap:${sizesUI.gapGrid};
     & .card{
         position:relative;
         width:100%;
         border-radius: ${sizesUI.radius};
     }
     &.color_group_main{
-        grid-template-rows: calc(28% - (16px / 3)) calc(44% - (16px / 3)) calc(28% - (16px / 3));
+        grid-template-rows: calc(28% - (${sizesUI.gapGrid} * 2 / 3)) calc(44% - (${sizesUI.gapGrid} * 2 / 3)) calc(28% - (${sizesUI.gapGrid} * 2 / 3));
     }
     &.color_group_light__selector{
-        grid-template-rows: calc(28% - (16px / 3)) calc(28% - (16px / 3)) calc(44% - (16px / 3));
+        grid-template-rows: calc(28% - (${sizesUI.gapGrid} * 2 / 3)) calc(28% - (${sizesUI.gapGrid} * 2 / 3)) calc(44% - (${sizesUI.gapGrid} * 2 / 3));
     }
 `
 
