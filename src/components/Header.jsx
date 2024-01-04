@@ -28,15 +28,17 @@ const HeaderFixed = styled.div`
     }
 `
 const Branding = styled.h1`
-    font-size:18px;
+    font-size:1.15rem;
     line-height:1;
     font-weight:900;
-    letter-spacing:-0.5px;
+    letter-spacing:-0.03rem;
+    position:relative;
+    padding-right:1.5rem;
     color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkText}` : `${colorsUI.lightText}`};
     & svg{
-        height:18px;
-        vertical-align:-3px;
-        margin-right:5px;
+        position:absolute;
+        height:1.15rem;
+        right:0;
         & path{
             fill:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
         }
@@ -123,7 +125,7 @@ function Header(){
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
                             <path d="M3.75,5C-.11,8.58,.37,13.11,.37,13.11c0,0,5.16,.5,8.53-2.13C13.05,7.73,14.09,1.29,14.09,1.29c0,0-6.48,.13-10.34,3.71ZM.39,12.98S5.24,7.73,9.7,5.87L.39,12.98Z"/>
                         </svg>
-                        Nanosite ColorPickers
+                        Nanosite ColorPicker
                     </Branding>
                     <Menu>
                         <Navigation $colorTheme={colorTheme}>
