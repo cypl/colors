@@ -7,7 +7,7 @@ import { fromHslToHex } from "./hslToHex"
  * @param {String} baseHue 
  * @param {String} baseSaturation 
  * @param {String} baseLightness 
- * @param {Number} hueVariation // set the variation oft the hue from baseHue (could a positive or negative number)
+ * @param {Number} hueVariation // set the variation of the hue from baseHue (could be a positive or negative number)
  * @param {Number} saturationVariation // set the exact saturation you want, from 0 to 100
  * @param {Number} lightnessVariation 
  * @param {Number} expectedLuminance 
