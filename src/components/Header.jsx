@@ -125,11 +125,11 @@ function Header(){
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
                             <path d="M3.75,5C-.11,8.58,.37,13.11,.37,13.11c0,0,5.16,.5,8.53-2.13C13.05,7.73,14.09,1.29,14.09,1.29c0,0-6.48,.13-10.34,3.71ZM.39,12.98S5.24,7.73,9.7,5.87L.39,12.98Z"/>
                         </svg>
-                        Nanosite ColorPicker
+                        NanoColors
                     </Branding>
                     <Menu>
                         <Navigation $colorTheme={colorTheme}>
-                            {/* <li>Test RGAA</li> */}
+                            <li>Test RGAA</li>
                             <li onClick={() => openModal(<ModalExport/>, modalThemeExport)}>Exporter</li>
                             <li onClick={() => openModal(<ModalAbout/>, modalThemeAbout)}>A propos</li>
                         </Navigation>
