@@ -9,7 +9,8 @@ import { fromHexToHsl } from "../utils/hexToHsl"
 
 const FormHexInput = styled.form`
     font-size:${sizesUI.text};
-    height:2.4rem;
+    //height:2.4rem;
+    margin-bottom:${sizesUI.gapGrid};
     & div{
         display:flex;
         border-radius:${sizesUI.radius};
@@ -78,7 +79,7 @@ const ColorPickerWrapper = styled.div`
     & .mantine-ColorPicker-wrapper{
         width:100%;
         position:relative;
-        height:calc(100% - 2.4rem);
+        height:calc(100% - 2.2rem);
     }
     & .mantine-ColorPicker-saturation{
         height: calc(100% - 2.7rem);
