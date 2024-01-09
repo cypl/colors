@@ -25,7 +25,7 @@ const FormHexInput = styled.form`
             height:100%;
             right:0;
             top:0;
-            width:${sizesUI.radius};
+            width:0.4rem;
             border-radius: ${sizesUI.radius} 0 0 ${sizesUI.radius};
         }
     }
