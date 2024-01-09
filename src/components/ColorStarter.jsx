@@ -80,9 +80,14 @@ const ColorPickerWrapper = styled.div`
         width:100%;
         position:relative;
         height:calc(100% - 2.2rem);
+        border-radius:${sizesUI.radius};
     }
     & .mantine-ColorPicker-saturation{
         height: calc(100% - 2.7rem);
+        border-radius:${sizesUI.radius};
+    }
+    & .mantine-ColorPicker-saturationOverlay{
+        border-radius:${sizesUI.radius};
     }
 `
 function ColorStarter(){
