@@ -5,7 +5,7 @@ import PanoramaCard from "./PanoramaCard"
 import ColorStarter from "./ColorStarter"
 
 const PanoramaContainer = styled.div`
-  background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
+  //background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
   padding:0px 0px 25px 0px;
   height:calc(100vh - 116px);
   & .content_large{
