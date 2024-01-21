@@ -1,10 +1,13 @@
 export const colorsUI = {
-    dark: "#1e1e1e",
-    darkest: "rgba(0,0,0,0.25)",
-    darkless: "rgba(120,120,120,0.3)",
-    darkColoredValue: "#e2bd7d",
-    darkText: "#ffffff",
-    darkTextBtn: "rgba(255,255,255,0.5)",
+    dark: "#161616",                        // fond foncé
+    darkless: "rgba(120,120,120,0.25)",     // bordures
+    darkest: "rgba(0,0,0,0.9)",             // fond des boutons actifs
+    darkColoredValue: "#e2bd7d",            // Couleur colorée
+    darkText: "rgba(200,200,200,0.8)",      // couleur des textes
+    darkTextBtn: "rgba(200,200,200,0.8)",   // couleur des icones dans les boutons
+    darkContrast: "#ffffff",                // Logo ou titre
+
+
     light: "#f5f3f3",
     lightest: "#ffffff",
     lightless: "rgba(120,120,120,0.2)",
