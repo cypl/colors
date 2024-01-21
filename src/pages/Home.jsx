@@ -130,7 +130,6 @@ const StyleSelector = styled.div`
   font-size:${sizesUI.text};
   line-height:1;
   height:56px;
-  background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
   display:flex;
 `
 const SelectorWrapper = styled.div`
@@ -147,15 +146,15 @@ const Selector = styled.span`
     padding:8px 12px;
     cursor:pointer;
     background-color:transparent;
-    color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkTextBtn}` : `${colorsUI.lightTextBtn}`};
+    color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkText}` : `${colorsUI.lightText}`};
     transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
     &:hover{
-      background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
+      background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.light}`};
       color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
       transition:0.1s background-color ease-in-out, 0.05s color ease-in-out;
     }
     &.active{
-      background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
+      background-color: ${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.light}`};
       color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
       transition:0.1s background-color ease-in-out, 0.0.5s color ease-in-out;
     }
