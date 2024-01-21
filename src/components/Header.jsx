@@ -11,7 +11,7 @@ import { modalThemeExport, modalThemeAbout } from "../utils/modalThemes"
 const HeaderWrapper = styled.header`
     position:relative;
     height:58px;
-    background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkest}` : `${colorsUI.lightest}`};
+    border-bottom:${props => props.$colorTheme === "Night" ? `1px solid ${colorsUI.darkless}` : `1px solid ${colorsUI.lightless}`};
 `
 const HeaderFixed = styled.div`
     position:fixed;
@@ -20,7 +20,6 @@ const HeaderFixed = styled.div`
     display:flex;
     align-items:center;
     z-index:1;
-    background-color:${props => props.$colorTheme === "Night" ? `${colorsUI.dark}` : `${colorsUI.light}`};
     & .content_large{
         display:flex;
         align-items:center;
@@ -34,7 +33,7 @@ const Branding = styled.h1`
     letter-spacing:-0.03rem;
     position:relative;
     padding-right:1.5rem;
-    color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkText}` : `${colorsUI.lightText}`};
+    color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkContrast}` : `${colorsUI.lightText}`};
     & svg{
         position:absolute;
         height:1.15rem;
@@ -55,7 +54,7 @@ const Navigation = styled.ul`
         display:inline-block;
         margin-left:30px;
         cursor:pointer;
-        color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkTextBtn}` : `${colorsUI.lightTextBtn}`};
+        color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkText}` : `${colorsUI.lightTextBtn}`};
         transition:0.1s color ease-in-out;
         &:hover{
             color:${props => props.$colorTheme === "Night" ? `${colorsUI.darkColoredValue}` : `${colorsUI.lightColoredValue}`};
