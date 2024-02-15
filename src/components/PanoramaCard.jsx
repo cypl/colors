@@ -38,7 +38,6 @@ const ColorLuminance = styled.p`
     opacity:0;
     transform:translateY(15px);
     transition:0.1s opacity ease-in-out, 0.1s transform ease-in-out;
-    display:none;
     & svg{
         display:inline-block;
         margin-right:3px;
