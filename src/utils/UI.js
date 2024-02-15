@@ -3,7 +3,7 @@ export const colorsUI = {
     darkless: "rgba(120,120,120,0.25)",     // bordures
     darkest: "rgba(0,0,0,0.9)",             // fond des boutons actifs
     darkColoredValue: "#e2bd7d",            // Couleur colorée
-    darkText: "rgba(200,200,200,0.8)",      // couleur des textes
+    darkText: "rgba(245,245,245,0.8)",      // couleur des textes
     darkTextBtn: "rgba(200,200,200,0.8)",   // couleur des icones dans les boutons
     darkContrast: "#ffffff",                // Logo ou titre
 
